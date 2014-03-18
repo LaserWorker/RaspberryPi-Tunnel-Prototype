@@ -21,7 +21,7 @@ A simple compact Ethernet or USB based device currently identified as a tunnel-b
 ### Status
 
 
-![The Raspberry-Pi in a box](https://drive.google.com/file/d/0B0sERjQC1Ot7SmxqSjdTRXJrT0E/edit?usp=sharing)
+![The Raspberry-Pi in a box](https://docs.google.com/document/d/1h6B3QS0SpNk-JlXwRDtjbckVfRs-8pUEhh8zWFxnbOA/edit?usp=sharing)
 ![The Raspberry-Pi in a box](https://drive.google.com/file/d/0B0sERjQC1Ot7c1J3MnFZbTk2cG8/edit?usp=sharing)
 These are some of the basic starting points using a Raspberry-Pi.
 The inclosed device can now display a number for identifying to the user what tunnel is currently in use.
