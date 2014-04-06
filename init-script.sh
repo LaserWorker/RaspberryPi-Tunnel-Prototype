@@ -36,6 +36,8 @@ echo $XIN
 #Check LED status
 echo $LED
 #put status into status.txt
+STAT="The connection to be made will be #" $LED
+echo $STAT>status.txt
 
 #The LEDs must be turned on
 sh LEDs.sh $LED
