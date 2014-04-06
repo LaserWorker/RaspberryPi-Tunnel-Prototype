@@ -7,9 +7,12 @@
 LED=10
 
 
-#To make the script repeat, it runs a while loop    
-#while [ "button not pressed down for more than 1 second" ]
+#XIN=$(</sys/class/gpio/gpio17/value);
+#To make the script repeat, it runs a while loop
+while [ $XIN -eq 1 ]; do
 
+# get the value of the button 
+XIN=$(cat /sys/class/gpio/gpio17/value)
 
 
 #Check LED status
@@ -28,7 +31,7 @@ echo sh startconnection.sh $LED
 
 
 #end while loop
-#done
+done
 
 LED=10
 echo sh 7seg-Led-on.sh $LED
