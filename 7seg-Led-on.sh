@@ -20,13 +20,13 @@ echo "out" > /sys/class/gpio/gpio23/direction
 echo "out" > /sys/class/gpio/gpio24/direction
 echo "out" > /sys/class/gpio/gpio25/direction
 echo "out" > /sys/class/gpio/gpio27/direction
-#direction = “out” 
+#direction = “out”
 
 RAN=0 #This is a random number to tell me if the number is displayable
 
 if [ "$1" -eq "1" ] #is the number given of value 1
 then  #turn on the two sements needed to display 1
-        echo "1" > /sys/class/gpio/gpio27/value    
+        echo "1" > /sys/class/gpio/gpio27/value
         echo "1" > /sys/class/gpio/gpio18/value
       #turn off all other segments
         echo "0" > /sys/class/gpio/gpio4/value
