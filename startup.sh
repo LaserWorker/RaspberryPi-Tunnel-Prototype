@@ -4,11 +4,14 @@
 
 #key code is commented out untel final testing
 
-LED=10
+LED=1
 XIN=1
 I=1
 B=8
 O=0
+C=0
+CMD="\n"
+
 echo $XIN
 echo $O
 echo $B
@@ -30,38 +33,52 @@ sh LEDs.sh 11
 
 #Get the current status of the button
 sleep 1
-XIN=$(cat /sys/class/gpio/gpio17/value)
-echo $XIN
+#turn on button initialy
+echo "1" > /sys/class/gpio/gpio17/value
+#store value to C
+C=$(cat /sys/class/gpio/gpio17/value)
+echo $C
+#Use that status to update the LED
+#LED=$(($C+$LED))
 
 #Check LED status
 echo $LED
 #put status into status.txt
-STAT="The connection to be made will be #" $LED
+STAT="The connection to be made will be #"$LED
 echo $STAT>status.txt
+echo $STAT
 
 #The LEDs must be turned on
 sh LEDs.sh $LED
 
 #Run a specific script for a given connection
-#sh connect.sh $LED
+sh connect.sh $LED $CMD
 
-#turn on button initialy
-echo "1" > /sys/class/gpio/gpio17/value
 #pause to make sure user is turning off.
 sleep 2
+#turn on button initialy
+echo "1" > /sys/class/gpio/gpio17/value
 #get the value of the button
 XIN=$(cat /sys/class/gpio/gpio17/value)
 echo $XIN
 
+#If we are changing LED
+if [ $C -eq 0 ]; then
+#do not shutdown
+XIN=1
+#Use that status to update the LED
+LED=$((1+$LED))
+fi
+
+#if we reached the max, reset
+if [ $LED -eq 10 ]; then
+LED=0
+fi
+
 #end while loop
 done
 
-LED="10"
-
-sh LEDs.sh $LED
-
-
 #shutdown if the button is still pressed
-#if [ button pressed ]
-#   sudo reboot
-#fi
+if [ $LED -eq 0 ]; then
+sudo shutdown -h -t sec 0
+fi
