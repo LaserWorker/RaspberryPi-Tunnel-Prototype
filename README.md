@@ -25,9 +25,9 @@ A simple compact Ethernet or USB based device currently identified as a tunnel-b
 ### Status
 
 
-![The Raspberry-Pi in a box](https://drive.google.com/file/d/0B0sERjQC1Ot7SmxqSjdTRXJrT0E)
+![The Raspberry-Pi in a box](http://lukeaburgess.com/tunnelbuilder/InsideWithBattery.JPG)
 
-![The Raspberry-Pi in a box](https://drive.google.com/file/d/0B0sERjQC1Ot7c1J3MnFZbTk2cG8)
+![The Raspberry-Pi in a box](http://lukeaburgess.com/tunnelbuilder/setup_sideview.jpg)
 
 These are some of the basic starting points using a Raspberry-Pi.
 
